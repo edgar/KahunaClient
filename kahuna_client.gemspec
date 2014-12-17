@@ -26,5 +26,5 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Edgar Gonzalez"]
   gem.email         = ["edgargonzalez@gmail.com"]
   gem.description   = %q{A ruby wrapper for Kahuna Push API}
-  gem.homepage      = "http://github.com/edgar/kahuna_client"
+  gem.homepage      = "http://github.com/edgar/KahunaClient"
 end
