@@ -1,4 +1,4 @@
-# KahunaClient [![Build Status](https://travis-ci.org/edgar/KahunaClient.png?branch=master)](https://travis-ci.org/edgar/KahunaClient)
+# KahunaClient [![Build Status](https://travis-ci.org/edgar/KahunaClient.png?branch=master)](https://travis-ci.org/edgar/KahunaClient) [![Gem Version](https://badge.fury.io/rb/kahuna_client.svg)](http://badge.fury.io/rb/kahuna_client)
 A ruby gem for the Kahuna Push API - https://app.usekahuna.com/tap/getstarted/pushapi/
 
 ## Installation
