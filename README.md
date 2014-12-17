@@ -5,7 +5,9 @@ A ruby gem for the Kahuna Push API - https://app.usekahuna.com/tap/getstarted/pu
 
 Add this line to your application's Gemfile:
 
-    gem 'kahuna_client'
+```ruby
+gem 'kahuna_client'
+```
 
 And then execute:
 
@@ -19,35 +21,35 @@ Or install it yourself as:
 ## API Usage Examples
 
 ```ruby
-    require "rubygems"
-    require "kahuna_client"
+require "rubygems"
+require "kahuna_client"
 
-    client = KahunaClient::Client.new(secret_key: 'your secret key', api_key: 'your api key')
+client = KahunaClient::Client.new(secret_key: 'your secret key', api_key: 'your api key')
 
-    push_object = {
-      target: {
-          username: "iamawesome1989",
-          email: "awesome@mail.com",
-          fbid: "42",
-          user_id: "789"
-      },
-      notification: {
-          alert: "Look at this Push!"
-      },
-      params: {
-          sale_id: "1234",
-          landing_page: "share_page"
-      },
-      config: {
-          start_time: 1382652322,
-          optimal_hours: 8,
-          influence_rate_limiting: true,
-          observe_rate_limiting: true
-      }
-    }
+push_object = {
+  target: {
+      username: "iamawesome1989",
+      email: "awesome@mail.com",
+      fbid: "42",
+      user_id: "789"
+  },
+  notification: {
+      alert: "Look at this Push!"
+  },
+  params: {
+      sale_id: "1234",
+      landing_page: "share_page"
+  },
+  config: {
+      start_time: 1382652322,
+      optimal_hours: 8,
+      influence_rate_limiting: true,
+      observe_rate_limiting: true
+  }
+}
 
-    # Send the pushes (one or more)
-    client.push([push_object])
+# Send the pushes (one or more)
+client.push([push_object])
 ```
 
 For more information about extra parameters and error conditions check the specs folder
@@ -72,11 +74,12 @@ Beside the adapter, you can change the following properties:
 
 For instance:
 
-    require 'typhoeus/adapters/faraday' # You will need the typhoeus gem
+```ruby
+require 'typhoeus/adapters/faraday' # You will need the typhoeus gem
 
-    client = KahunaClient.client(adapter: :typhoeus, user_agent: "foobar v1", debug: true, secret_key: 'foo', api_key: 'bar')
-    client.push(push_array)
-
+client = KahunaClient.client(adapter: :typhoeus, user_agent: "foobar v1", debug: true, secret_key: 'foo', api_key: 'bar')
+client.push(push_array)
+```
 
 ## Contributing
 
