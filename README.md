@@ -18,6 +18,7 @@ Or install it yourself as:
 
 ## API Usage Examples
 
+```ruby
     require "rubygems"
     require "kahuna_client"
 
@@ -47,7 +48,7 @@ Or install it yourself as:
 
     # Send the pushes (one or more)
     client.push([push_object])
-
+```
 
 For more information about extra parameters and error conditions check the specs folder
 
