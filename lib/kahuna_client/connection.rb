@@ -1,3 +1,4 @@
+require 'logger'
 require 'faraday_middleware'
 Dir[File.expand_path('../../faraday/*.rb', __FILE__)].each{|f| require f}
 
@@ -25,7 +26,7 @@ module KahunaClient
           connection.use Faraday::Response::ParseJson
         end
         connection.use FaradayMiddleware::RaiseHttpException
-        connection.use Faraday::Response::Logger if debug
+        connection.use Faraday::Response::Logger, ::Logger.new(STDOUT), {:bodies => true} if debug
         connection.adapter(adapter)
       end
     end
