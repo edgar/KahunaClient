@@ -6,7 +6,7 @@ describe KahunaClient::Client do
     @client = KahunaClient::Client.new(app_id: 'ID', app_key: 'KEY', environment: 'p')
   end
 
-  describe ".logs_with_timestamp" do
+  describe ".logs with timestamp" do
 
     let!(:timestamp) { Time.now }
 
@@ -26,12 +26,12 @@ describe KahunaClient::Client do
     end
 
     it "should get the correct resource" do
-      @client.logs_with_timestamp(timestamp, 1)
+      @client.logs({timestamp:timestamp, number_of_records:1})
       expect(a_post("api/kahunalogs?env=p").with(body: payload)).to have_been_made
     end
   end
 
-  describe ".logs_with_cursor" do
+  describe ".logs with cursor" do
 
     let!(:cursor) { 'TestCursor' }
 
@@ -51,7 +51,7 @@ describe KahunaClient::Client do
     end
 
     it "should get the correct resource" do
-      @client.logs_with_cursor(cursor, 1)
+      @client.logs({cursor:cursor, number_of_records:1})
       expect(a_post("api/kahunalogs?env=p").with(body: payload)).to have_been_made
     end
   end
