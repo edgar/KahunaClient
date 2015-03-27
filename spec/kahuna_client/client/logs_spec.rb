@@ -35,11 +35,11 @@ describe KahunaClient::Client do
 
       # should have the proper fields
       [:cursor, :more_records, :push].each do |key|
-        expect(logs.has_key?(key)).to be_true
+        expect(logs.has_key?(key)).to be true
       end
 
       # push array should have the proper size
-      expect(logs.push).to have(5).items
+      expect(logs.push.size).to be 5
     end
   end
 
