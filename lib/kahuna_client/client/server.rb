@@ -22,7 +22,7 @@ module KahunaClient
       protected
 
       def send_path
-        "api/log"
+        "log"
       end
     end
   end

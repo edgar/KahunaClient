@@ -32,8 +32,8 @@ module KahunaClient
           request.url(path, new_options)
         when :post, :put
           request.path = path
-          request.params = path.eql?("api/log") ? new_options : {:env => environment}
-          request.body = new_options.to_json if !new_options.empty? && !path.eql?("api/log")
+          request.params = path.eql?("log") ? new_options : {:env => environment}
+          request.body = new_options.to_json if !new_options.empty? && !path.eql?("log")
         end
       end
       if raw

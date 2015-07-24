@@ -28,23 +28,23 @@ describe KahunaClient::Client do
 
     let(:params) {
       {
-          :key => 'KEY',
-          :dev_id => '12345678',
-          :env => 's',
-          :username => 'iamawesome1989',
-          :user_email => 'awesome@mail.com',
-          :event => 'signup'
+          key: app_key,
+          dev_id: app_id,
+          env: environment,
+          username: username,
+          user_email: user_email,
+          event: event
       }
     }
 
     before do
-      stub_post("api/log?dev_id=12345678&env=s&event=signup&key=key&user_email=test@email.com&username=test@email.com")
+      stub_post("log?dev_id=12345678&env=s&event=signup&key=key&user_email=test@email.com&username=test@email.com")
           .to_return(:body => fixture('success.json'))
     end
 
     it "get the correct resource" do
       subject
-      expect(a_post("api/log?dev_id=12345678&env=s&event=signup&key=key&user_email=test@email.com&username=test@email.com")).to have_been_made.once
+      expect(a_post("log?dev_id=12345678&env=s&event=signup&key=key&user_email=test@email.com&username=test@email.com")).to have_been_made.once
     end
   end
 end
