@@ -33,7 +33,8 @@ describe KahunaClient::Client do
           env: environment,
           username: username,
           user_email: user_email,
-          event: event
+          event: event,
+          only_params: true
       }
     }
 

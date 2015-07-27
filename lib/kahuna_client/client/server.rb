@@ -13,7 +13,8 @@ module KahunaClient
             :env => env,
             :username => username,
             :user_email => user_email,
-            :event => event
+            :event => event,
+            :only_params => true
         }
 
         post(send_path, params)
