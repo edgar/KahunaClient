@@ -11,15 +11,15 @@ module KahunaClient
       # user_email (e.g. email = jdoe@usekahuna.com) Email Address of the User
       # event (e.g. event = start) Event Name
       # user_info (e.g. user_info = {'first_name': 'John', 'last_name': 'Doe', 'gender': 'm'})
-    def send_event(key:key, dev_id:dev_id, env:env, username:username, user_email:user_email, event:event, user_info:user_info)
+      def send_event(options = {})
         params = {
-            :key => key,
-            :dev_id => dev_id,
-            :env => env,
-            :username => username,
-            :user_email => user_email,
-            :event => event,
-            :user_info => user_info,
+            :key => options[:key],
+            :dev_id => options[:dev_id],
+            :env => options[:env],
+            :username => options[:username],
+            :user_email => options[:user_email],
+            :event => options[:event],
+            :user_info => options[:user_info],
             :only_params => true
         }
 
