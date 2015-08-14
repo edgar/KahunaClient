@@ -26,14 +26,23 @@ module KahunaClient
     # Perform an HTTP request
     def request(method, path, options, raw=false)
       new_options = options.dup
+      only_params = new_options.delete :only_params
+
+      post_params = {:env => environment}
+      if only_params
+        post_params = post_params.merge new_options
+      end
+
       response = connection(raw).send(method) do |request|
         case method
         when :get, :delete
           request.url(path, new_options)
         when :post, :put
           request.path = path
-          request.params = {:env => environment}
-          request.body = new_options.to_json unless new_options.empty?
+          if !only_params
+            request.body = new_options.to_json unless new_options.empty?
+          end
+          request.params = post_params
         end
       end
       if raw

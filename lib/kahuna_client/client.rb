@@ -6,5 +6,6 @@ module KahunaClient
     include KahunaClient::Client::Push
     include KahunaClient::Client::Logs
     include KahunaClient::Client::UserAttribute
+    include KahunaClient::Client::Server
   end
 end
