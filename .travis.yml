@@ -8,3 +8,6 @@ rvm:
   - 2.1.0
   - 2.2.3
   - ruby-head
+
+before_install:
+  - "gem install bundler" # -v 1.7.14 if a specific version is needed
